@@ -4,16 +4,9 @@ all:
 
 # Genetrate checksum (recommend Whole project clean before)
 
-sum:
-	./gensum.sh
-
-# Whole project clean
-
-clean:
-	make clean -C qcan_espnow
-	make clean -C qcan_can
-	make clean -C ui_espnow
-	make clean -C mon_espnow/v000
+get:
+	cp -a ../IOCOMx/CAN/robotell/ ./source_code
+	rm -rf source_code/robotell/python-can/.git
 
 # Auto Checkin
 

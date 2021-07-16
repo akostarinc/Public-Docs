@@ -6,14 +6,16 @@
 
       ./robotell.pl -p /dev/TTYUSB0 --ord 0 --mask 255 --value 255
 
-          to switch on all swithes on the first unit (1-2)
+            to switch on all swithes on the first unit (switches 1-8)
 
       ./robotell.pl -p /dev/TTYUSB0 --ord 1 --mask 255 --value 255
 
+            to switch on all swithes on the second unit (switches 9-16)
 
-  Usage:
+  Usage / Help:
 
     Type ./robotell.py -h for a more elaborate description of the
+
 
 
  Just for completeness the python USB drivers are included here in the python_can
