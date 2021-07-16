@@ -52,7 +52,7 @@ listen  = 0
 bridge  = 0
 count = 0
 
-old_rx = None   #can.Message()
+old_rx = can.Message()
 
 # ------------------------------------------------------------------------
 # Convert in str NNN and  0xNNN str to number

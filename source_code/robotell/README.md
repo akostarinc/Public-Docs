@@ -56,6 +56,18 @@ substitute ports with COM1 ... COM2 etc.
     #define MSG_AUX         0x19EE5509  // IOCOM auxiliary command
     #define MSG_RESERVED    0x19EE550a  // IOCOM reserved for future use
 
+ The items marked 'intra' are used internally between IOCOMx modules. The status on the inputs / outputs
+are mirrored to the CAN BUS (broadcast on delta). The AUX commands control the local
+outputs, and the BRIDGE command control the remote outputs.
+
+./robotell.py has a monitor (listen) mode, where the CAN transmission can
+be monitored on the BUS; here is an example output:
+
+    rx:0 Timestamp: 1626469011.385363    ID: 19ee5501    X Rx                DLC:  8    00 00 00 00 00 00 00 00
+    rx:0 Timestamp: 1626469011.393061    ID: 19ee5503    X Rx                DLC:  8    01 00 00 00 00 00 00 00
+    rx:0 Timestamp: 1626469011.393403    ID: 19ee5504    X Rx                DLC:  8    00 00 00 00 00 00 00 00
+    rx:0 Timestamp: 1626469009.347454    ID: 19ee5507    X Rx                DLC:  8    ef 00 ff 00 00 00 00 00
+    rx:0 Timestamp: 1626469009.487352    ID: 19ee5506    X Rx                DLC:  8    00 00 00 00 00 00 00 00
 
  Just for completeness the python USB drivers are included here in the python_can
 subdirectory.
