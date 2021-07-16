@@ -11,19 +11,23 @@ packet with, we transmit eight bytes of MASK and eight bytes of VALUE.
 
             to switch on all swithes on the first unit (switches 1-8)
 
-      ./robotell.pl -p /dev/TTYUSB0 --ord 0 --mask 255 --value 00
+      ./robotell.pl -p /dev/TTYUSB0 --ord 0 --mask 255 --value 0
 
-            to switch on all swithes on the first unit (switches 1-8)
+            to switch off all swithes on the first unit (switches 1-8)
 
       ./robotell.pl -p /dev/TTYUSB0 --ord 1 --mask 255 --value 255
 
             to switch on all swithes on the second unit (switches 9-16)
 
+      ./robotell.pl -p /dev/TTYUSB0 --ord 2 --mask 0xff --value 255
+
+            to switch on all swithes on the third unit (switches 17-24)
 
   Other Usages:
 
-      ./robotell.pl -p /dev/TTYUSB0 --ord 1 --mask 255 --value 255
+      ./robotell.pl -p /dev/TTYUSB0 0 0 0 255   0  0  0 255
 
+            to switch on all switches on the fourth unit
 
   Usage / Help:
 
@@ -32,8 +36,8 @@ packet with, we transmit eight bytes of MASK and eight bytes of VALUE.
 
   If you are using a language other than python, please do not be discouraged, as
 the python code contains all the elements that are important to drive the
-bus successfully in any language, or any OS. While this script was
-developed in Linux, it operates on windows as well.
+CAN bus successfully. This can be ported to any language with ease. While this script was
+developed in Linux, it operates on Windows as well. Though untested, MAC should operate as well.
 
  If you are using an OS other than Linux, substitute the values as your platform
  demands. For instance, using Windows, instead of specifying /dev/ttyUSB0,
